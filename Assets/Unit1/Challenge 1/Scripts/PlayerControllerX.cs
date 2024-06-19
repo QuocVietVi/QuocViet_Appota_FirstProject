@@ -28,5 +28,7 @@ public class PlayerControllerX : MonoBehaviour
         transform.Rotate(Vector3.left, rotationSpeed * verticalInput * Time.deltaTime);
 
         propeller.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
+
+        
     }
 }
