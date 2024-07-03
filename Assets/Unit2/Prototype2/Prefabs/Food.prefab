@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 7399563186023647289}
   - component: {fileID: 4735049167077697096}
   - component: {fileID: 3405562313931868080}
-  - component: {fileID: 9018773901015853151}
   - component: {fileID: 1610064538809897130}
+  - component: {fileID: -1023703331780634727}
   - component: {fileID: 3459072382050951592}
   m_Layer: 0
   m_Name: Food
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,19 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &9018773901015853151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910534376744400609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8183e095e71cdb41837f988e2263d85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 40
 --- !u!114 &1610064538809897130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +98,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0fc97b82b1037f48bcc1ab5a5df951f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1023703331780634727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910534376744400609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f1d8516145594418abbca6166ed8be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 40
 --- !u!65 &3459072382050951592
 BoxCollider:
   m_ObjectHideFlags: 0

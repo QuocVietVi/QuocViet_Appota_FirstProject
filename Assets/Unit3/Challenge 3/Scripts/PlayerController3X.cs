@@ -38,7 +38,7 @@ public class PlayerController3X : MonoBehaviour
         // While space is pressed and player is low enough, float up
         if (Input.GetKey(KeyCode.Space) && !gameOver && isLow )
         {
-            playerRb.AddForce(Vector3.up * floatForce);
+            playerRb.AddForce(Vector3.up * floatForce,ForceMode.Impulse);
         }
         if (transform.position.y > maxY)
         {

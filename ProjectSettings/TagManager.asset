@@ -12,6 +12,8 @@ TagManager:
   - Money
   - Powerup
   - Enemy
+  - Gate
+  - Bullet
   layers:
   - Default
   - TransparentFX
