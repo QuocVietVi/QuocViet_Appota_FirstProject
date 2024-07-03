@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
 
     public Button startBtn;
     public Button achieveBtn;
+
     public Button backBtn;
     public GameObject menuPanel;
     public GameObject achievementPanel;

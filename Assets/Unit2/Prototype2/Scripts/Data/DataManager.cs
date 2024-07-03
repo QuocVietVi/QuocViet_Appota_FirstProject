@@ -25,8 +25,9 @@ public class DataManager : MonoBehaviour
     public void SaveData<T>(List<T> data)
     {
         string content = JsonHelper.ToJson(data.ToArray());
-        string path = Application.persistentDataPath + "/" + typeof(T).ToString() + ".json";
+        string path = Application.dataPath + "/Resources/" + typeof(T).ToString() + ".json";
         WriteFile(path, content);
+        Debug.Log("Save successful");
     }
     public void SaveData<T>(T data)
     {
@@ -39,7 +40,7 @@ public class DataManager : MonoBehaviour
     public List<T> ReadListData<T>()
     {
         Debug.Log("read dataa");
-        string path = Application.persistentDataPath + "/" + typeof(T).ToString() + ".json";
+        string path = Application.dataPath + "/Resources/" + typeof(T).ToString() + ".json";
         string content = ReadFile(path);
         if (string.IsNullOrEmpty(content))
         {

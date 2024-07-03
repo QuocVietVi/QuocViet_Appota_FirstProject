@@ -10,17 +10,37 @@ public class PlayerControllerX : MonoBehaviour
     public float verticalInput;
     public Transform propeller;
 
+    private Rigidbody rb;
+    private float time;
+    public float duration = 0.2f;
+    private Quaternion rotationOnKeyUp;
+
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
+        time = 0;
+        rotationOnKeyUp = Quaternion.identity;
+    }
 
+    private void Update()
+    {
+        // get the user's vertical input
+        verticalInput = Input.GetAxisRaw("Vertical");
+
+        if (Mathf.Abs(verticalInput) > 0 && time == 0)
+        {
+            rotationOnKeyUp = transform.rotation;
+        }
+
+        time += Time.deltaTime;
+        time *= verticalInput == 0 ? 1 : 0;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         // get the user's vertical input
-        verticalInput = Input.GetAxis("Vertical");
 
         // move the plane forward at a constant rate
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
@@ -42,14 +62,8 @@ public class PlayerControllerX : MonoBehaviour
 
     void AutoBalance()
     {
-        if (transform.rotation.x < 0)
-        {
-            transform.Rotate(Vector3.left, rotationSpeed * Time.deltaTime);
-        }
-        if (transform.rotation.x > 0)
-        {
-            transform.Rotate(Vector3.right, rotationSpeed * Time.deltaTime);
-        }
+        Quaternion rot = Quaternion.Lerp(rotationOnKeyUp, Quaternion.identity, time / duration);
+        rb.MoveRotation(rot);
     }
 
 }
